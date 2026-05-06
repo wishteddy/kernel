@@ -90,6 +90,7 @@ on:
           - -summer-growing
           - -autumn-harvesting
           - -winter-storing
+          - -wishtoday          
           - -yourname
       kernel_config:
         description: "Set the path of kernel .config"
