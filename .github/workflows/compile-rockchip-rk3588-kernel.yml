@@ -196,20 +196,23 @@ jobs:
           docker_image: ophub/armbian-${{ inputs.docker_image }}:arm64
 
       - name: Upload Kernel to Release
-        uses: ncipollo/release-action@main
+        uses: ophub/upload-to-releases@main
         if: ${{ env.PACKAGED_STATUS == 'success' && !cancelled() }}
         with:
           tag: kernel_rk3588
           artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
-          allowUpdates: true
-          removeArtifacts: false
-          replacesArtifacts: true
-          makeLatest: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          allow_updates: true
+          remove_artifacts: false
+          replaces_artifacts: true
+          make_latest: true
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             - These kernels can be used for `Armbian`, `OpenWrt` and `FnNAS`.
             - These are dedicated BSP kernels for `Rockchip rk3588` and are not compatible with other series.
             - Those with `flippy` in the filename are manually uploaded kernels maintained and shared by [flippy](https://github.com/unifreq), while the others are automatically compiled online.
+
+            <br />
+
             - 这些内核可用于 `Armbian`, `OpenWrt` 和 `FnNAS`。
             - 这些是 `Rockchip rk3588` 专用 BSP 内核，和其他系列不通用。
             - 其中名字里带有 `flippy` 的是手动上传的由 [flippy](https://github.com/unifreq) 大佬维护制作分享的内核，其他是在线自动编译的。

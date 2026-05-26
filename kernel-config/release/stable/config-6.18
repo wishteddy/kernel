@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 6.18.26 Kernel Configuration
+# Linux/arm64 6.18.32 Kernel Configuration
 #
 CONFIG_CC_VERSION_TEXT="aarch64-none-linux-gnu-gcc (Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)) 15.2.1 20251203"
 CONFIG_CC_IS_GCC=y
@@ -3057,7 +3057,8 @@ CONFIG_R8168_EEE=y
 # CONFIG_R8168_MULTIPLE_TX_QUEUE is not set
 # CONFIG_R8168_RSS_SUPPORT is not set
 CONFIG_R8168_GIGA_LITE=y
-# CONFIG_R8169 is not set
+CONFIG_R8169=m
+CONFIG_R8169_LEDS=y
 # CONFIG_RTASE is not set
 # CONFIG_NET_VENDOR_RENESAS is not set
 # CONFIG_NET_VENDOR_ROCKER is not set
